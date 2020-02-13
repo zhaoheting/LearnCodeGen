@@ -1,8 +1,6 @@
-package com.example.LearnCodeGen.controller;
+package com.example.LearnCodeGen.helloService.controller;
 
-import com.example.LearnCodeGen.controller.api.TestApi;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import com.example.LearnCodeGen.helloService.controller.api.TestApi;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

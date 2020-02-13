@@ -1,8 +1,7 @@
-package com.example.LearnCodeGen.controller;
+package com.example.LearnCodeGen.helloService.controller;
 
-import com.example.LearnCodeGen.controller.api.AncillariesApi;
-import com.example.LearnCodeGen.model.Ancillary;
-import io.swagger.annotations.ApiParam;
+import com.example.LearnCodeGen.helloService.controller.api.AncillariesApi;
+import com.example.LearnCodeGen.helloService.model.Ancillary;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

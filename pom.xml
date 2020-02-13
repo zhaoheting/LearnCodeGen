@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<swagger-codegen-maven-plugin-version>2.3.1</swagger-codegen-maven-plugin-version>
+		<base-package>com.example.LearnCodeGen</base-package>
 	</properties>
 
 	<dependencies>
@@ -64,6 +66,56 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-codegen-maven-plugin</artifactId>
+				<version>${swagger-codegen-maven-plugin-version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources-client</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/swagger.yaml</inputSpec>
+							<language>java</language>
+							<!--<library>resttemplate</library>-->
+							<output>${project.basedir}</output>
+							<invokerPackage>${base-package}.generated.client</invokerPackage>
+							<apiPackage>${base-package}.generated.client.template</apiPackage>
+							<modelPackage>${base-package}.generated.model</modelPackage>
+							<configOptions>
+								<sourceFolder>src/main/java</sourceFolder>
+								<dateLibrary>java8-localdatetime</dateLibrary>
+								<hideGenerationTimestamp>true</hideGenerationTimestamp>
+							</configOptions>
+						</configuration>
+					</execution>
+					<execution>
+						<id>generate-sources-server</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/swagger.yaml</inputSpec>
+							<language>spring</language>
+							<output>${project.basedir}</output>
+							<invokerPackage>${base-package}.generated.controller</invokerPackage>
+							<apiPackage>${base-package}.generated.controller.interfaces</apiPackage>
+							<modelPackage>${base-package}.generated.model</modelPackage>
+							<configOptions>
+								<sourceFolder>src/main/java</sourceFolder>
+								<dateLibrary>java8-localdatetime</dateLibrary>
+								<hideGenerationTimestamp>true</hideGenerationTimestamp>
+								<configPackage>${base-package}.swagger</configPackage>
+								<useTags>true</useTags>
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+
 			</plugin>
 		</plugins>
 	</build>

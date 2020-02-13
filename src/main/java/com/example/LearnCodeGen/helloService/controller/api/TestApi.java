@@ -1,4 +1,4 @@
-package com.example.LearnCodeGen.controller.api;
+package com.example.LearnCodeGen.helloService.controller.api;
 
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.RequestMapping;

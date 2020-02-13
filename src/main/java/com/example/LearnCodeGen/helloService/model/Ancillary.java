@@ -1,4 +1,4 @@
-package com.example.LearnCodeGen.model;
+package com.example.LearnCodeGen.helloService.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -1,4 +1,4 @@
-package com.example.LearnCodeGen.annotation;
+package com.example.LearnCodeGen.helloService.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

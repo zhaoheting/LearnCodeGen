@@ -1,7 +1,6 @@
-package com.example.LearnCodeGen.config.swagger;
+package com.example.LearnCodeGen.helloService.config.swagger;
 
 import com.example.LearnCodeGen.LearnCodeGenApplication;
-import com.example.LearnCodeGen.annotation.SwaggerCustonIgnore;
 import com.google.common.base.Predicate;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +14,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import static com.google.common.base.Predicates.not;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 import static springfox.documentation.builders.RequestHandlerSelectors.withMethodAnnotation;

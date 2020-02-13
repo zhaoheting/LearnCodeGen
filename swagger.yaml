@@ -1,0 +1,128 @@
+---
+swagger: '2.0'
+info:
+  description: the description of apiinfo.
+  version: 1.0.0
+  title: Learn how to use swagger.
+  contact:
+    name: zht
+    url: url in contact.
+    email: heting.zhao@www.com.
+host: localhost:8080
+basePath: "/"
+tags:
+  - name: 测试tags
+    description: The Test API
+  - name: 附加产品管理
+    description: The Ancillaries API
+paths:
+  "/ancillaries/addAncillaries":
+    post:
+      tags:
+        - 附加产品管理
+      summary: 一个测试api
+      description: 一个测试api
+      operationId: addAncillariesUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - "*/*"
+      parameters:
+        - in: body
+          name: ancillary
+          description: ancillary
+          required: false
+          schema:
+            "$ref": "#/definitions/Ancillary"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '201':
+          description: 添加附加产品成功
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  "/ancillaries/getAncillaries":
+    get:
+      tags:
+        - 附加产品管理
+      summary: 一个附加产品api value
+      description: 一个附加产品api notes
+      operationId: getAncillariesUsingGET
+      produces:
+        - "*/*"
+        - application/json
+      parameters:
+        - in: body
+          name: ancillarieName
+          description: ancillarieName
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '201':
+          description: 获取附加产品列表成功
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: 获取附加产品列表失败
+  "/test/test":
+    get:
+      tags:
+        - 测试tags
+      summary: 一个测试api
+      description: 一个测试api
+      operationId: testUsingGET
+      produces:
+        - "*/*"
+        - application/json
+      parameters:
+        - in: body
+          name: testString
+          description: testString
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '201':
+          description: test succeed
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Ancillary:
+    type: object
+    properties:
+      ancillaryId:
+        type: string
+        allowEmptyValue: false
+      ancillaryName:
+        type: string
+        allowEmptyValue: false
+    title: Ancillary
+    description: 附加产品
+
